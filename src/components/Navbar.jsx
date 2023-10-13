@@ -1,103 +1,106 @@
-import { useState } from "react";
-import { HiMenuAlt4, HiX } from "react-icons/hi";
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import logo from "../assets/logo.png";
+import { Link, useLocation } from "react-router-dom";
 
-function Navbar() {
-  const [toggleMenu, setToggleMenu] = useState(false);
+const Navbar = () => {
+  const location = useLocation();
+
+  const navigation = [
+    { name: "Accueil", href: "/", current: location.pathname === "/" },
+    {
+      name: "Gallerie",
+      href: "/gallerie",
+      current: location.pathname === "/gallerie",
+    },
+    {
+      name: "Tarifs",
+      href: "/tarifs",
+      current: location.pathname === "/tarifs",
+    },
+    {
+      name: "Contact",
+      href: "/contact",
+      current: location.pathname === "/contact",
+    },
+  ];
+
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(" ");
+  }
 
   return (
-    <nav className="fixed top-0 w-full flex justify-center p-4">
-      <ul
-        className={`${toggleMenu ? "flex" : "hidden"} flex-col items-center
-       w-full absolute top-full pb-5 sm:flex sm:relative sm:flex-row
-      sm:pb-0 sm:justify-center`}
-      >
-        <li>
-          <a
-            className="inline-block py-2 mx-7 text-lg font-semibold sm:py-0 sm:text-xl"
-            href="#"
-          >
-            Accueil
-          </a>
-        </li>
-        <li>
-          <a
-            className="inline-block py-2 mx-7 text-lg font-semibold sm:py-0 sm:text-xl"
-            href="#"
-          >
-            Gallerie
-          </a>
-        </li>
-        <li>
-          <a
-            className="inline-block py-2 mx-7 text-lg font-semibold sm:py-0 sm:text-xl"
-            href="#"
-          >
-            Tarifs
-          </a>
-        </li>
-        <li>
-          <a
-            className="inline-block py-2 mx-7 text-lg font-semibold sm:py-0 sm:text-xl"
-            href="#"
-          >
-            Contact
-          </a>
-        </li>
-      </ul>
-      {toggleMenu ? (
-        <HiX
-          className="ml-auto sm:hidden"
-          onClick={() => setToggleMenu(false)}
-        />
-      ) : (
-        <HiMenuAlt4
-          className="ml-auto sm:hidden"
-          onClick={() => setToggleMenu(true)}
-        />
+    <Disclosure as="nav" className="bg-black fixed w-full">
+      {({ open }) => (
+        <>
+          <div className="mr-auto sm:ml-5">
+            <div className="relative flex h-16 items-center justify-between">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <span className="absolute -inset-0.5" />
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
+                <div className="flex flex-shrink-0 items-center">
+                  <img
+                    className="h-16 mt-3 w-auto"
+                    src={logo}
+                    alt="Your Company"
+                  />
+                </div>
+                <div className="hidden sm:mr-4 sm:flex sm:items-center">
+                  <div className="flex space-x-4">
+                    {navigation.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className={classNames(
+                          item.current
+                            ? "bg-white text-black"
+                            : "text-white hover:bg-gray-700 hover:text-white",
+                          "rounded-md px-3 py-2 text-sm font-medium"
+                        )}
+                        aria-current={item.current ? "page" : undefined}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <Disclosure.Panel className="sm:hidden">
+            <div className="space-y-1 px-2 pb-3 pt-2">
+              {navigation.map((item) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as={Link}
+                  to={item.href}
+                  className={classNames(
+                    item.current
+                      ? "bg-white text-black"
+                      : "text-white hover:bg-gray-700 hover:text-white",
+                    "block text-center rounded-md px-3 py-2 text-base font-medium"
+                  )}
+                  aria-current={item.current ? "page" : undefined}
+                >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+            </div>
+          </Disclosure.Panel>
+        </>
       )}
-    </nav>
+    </Disclosure>
   );
-}
+};
 
 export default Navbar;
-/*     <header>
-        <nav>
-          <div className="mx-auto">
-            <div className="flex justify-start lg:justify-center">
-              <div className="flex items-center gap-16 my-6">
-                <div className="hidden lg:flex gap-8">
-                  <a href="#" className="text-xl font-semibold">
-                    Acceuil
-                  </a>
-                  <a className="text-xl font-semibold" href="#">Gallerie</a>
-                  <a className="text-xl font-semibold" href="#">Tarifs</a>
-                  <a className="text-xl font-semibold" href="#">Contactez-nous</a>
-                </div>
-              </div>
-              <div className="flex gap-6">
-                <div className="lg:hidden flex items-center">
-                  <button onClick={() => setToggleMenu(!toggleMenu)}>
-                    <Bars3Icon className=" " />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className={`fixed z-40 w-full  bg-gray-100 overflow-hidden flex flex-col lg:hidden gap-12  origin-top duration-700 ${
-              !toggleMenu ? "h-0" : "h-full"
-            }`}
-          >
-            <div className="px-8">
-              <div className="flex flex-col gap-8 font-bold tracking-wider">
-                <a href="#" className="border-l-4 border-gray-600">
-                  Acceuil
-                </a>
-                <a href="#">Gallerie</a>
-                <a href="#">Tarifs</a>
-                <a href="#">Contactez-nous</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>*/
