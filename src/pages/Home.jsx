@@ -13,7 +13,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-black flex flex-col justify-center items-center h-full">
+    <div className="flex flex-col md:flex-row justify-center items-center h-full">
       {home.map((home, index) => (
         <>
           <div
@@ -25,11 +25,11 @@ const Home = () => {
               )})`,
             }}
           ></div>
-          <div className="flex flex-col gap-7 justify-center items-center mr-8 mt-6">
-            <h1 className="text-white font-medium text-4xl md:text-5xl font-primary">
+          <div className="flex flex-col gap-7 justify-center items-center text-center mr-8 mt-6">
+            <h1 className="text-white font-medium italic text-3xl  xl:text-5xl font-primary">
               {home.title}
             </h1>
-            <p className="text-white font-bold text-2xl md:text-3xl mx-2 font-secondary">
+            <p className="text-white font-medium text-xl xl:text-3xl mx-2 font-secondary">
               {home.description}
             </p>
           </div>

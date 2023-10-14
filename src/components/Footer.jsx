@@ -3,7 +3,7 @@ import { FaFacebookF } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col fixed bottom-5 right-5 gap-5 z-10 text-3xl text-white">
+    <footer className="flex flex-col fixed bottom-5 right-5 gap-5 z-10 text-base xl:text-3xl text-white">
       <div>
         <a href="https://twitter.com">
           <BsTwitter />

@@ -30,7 +30,7 @@ const Navbar = () => {
   }
 
   return (
-    <Disclosure as="nav" className="bg-black fixed w-full">
+    <Disclosure as="nav" className={`${location.pathname === "/" && "fixed"} w-full`}>
       {({ open }) => (
         <>
           <div className="mr-auto sm:ml-5">
