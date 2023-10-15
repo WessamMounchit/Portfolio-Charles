@@ -37,7 +37,7 @@ const Gallery = () => {
         Découvrez ma collection
       </h1>
 
-      <div className="font-primary text-2xl flex flex-wrap justify-center gap-8 text-white mb-20 mt-16 mx-6">
+      <div className="font-primary text-2xl flex flex-wrap justify-center gap-2 mb-20 mx-6 mt-9 sm:mt-16  sm:gap-8 text-white">
         {filters.map((filter, index) => (
           <button
             key={index}
@@ -55,10 +55,7 @@ const Gallery = () => {
 
       <div className="flex flex-wrap justify-center items-center gap-7 px-8 sm:px-0">
         {filteredGallery.map((item, index) => (
-          <div
-            className="flex flex-wrap justify-center items-center gap-7 px-8 sm:px-0"
-            key={index}
-          >
+          <div key={index}>
             <img
               className="rounded-lg sm:h-60 sm:w-96 object-cover"
               src={urlFor(item.imgUrl)}

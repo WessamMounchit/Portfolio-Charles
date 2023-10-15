@@ -12,6 +12,8 @@ body,
   background-color: black;
 }
 
-h1, p {
+h1,
+p,
+h2 {
   text-wrap: balance;
 }

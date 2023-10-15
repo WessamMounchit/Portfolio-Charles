@@ -18,18 +18,18 @@ const Home = () => {
         <>
           <div
             key={index}
-            className="h-[60vh] w-full bg-no-repeat bg-contain bg-center flex justify-center items-center text-center flex-col gap-4"
+            className="h-[55vh] w-full bg-no-repeat bg-contain bg-center flex justify-center items-center text-center flex-col gap-4"
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${urlFor(
                 home.imgUrl
               )})`,
             }}
           ></div>
-          <div className="flex flex-col gap-7 justify-center items-center text-center mr-8 mt-6">
-            <h1 className="text-white font-medium italic text-3xl  xl:text-5xl font-primary">
+          <div className="flex flex-col gap-3 sm:gap-7 justify-center items-center text-center pb-8 sm:p-0 sm:mr-8 sm:mt-6">
+            <h1 className="text-white font-medium italic text-xl xl:text-5xl font-primary">
               {home.title}
             </h1>
-            <p className="text-white font-medium text-xl xl:text-3xl mx-2 font-secondary">
+            <p className="text-white font-medium text-lg xl:text-3xl mx-2 font-secondary">
               {home.description}
             </p>
           </div>
