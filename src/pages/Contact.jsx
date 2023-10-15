@@ -13,11 +13,11 @@ function ContactForm() {
   };
 
   return (
-    <>
+    <section className="h-full pt-20">
       <h1 className="font-secondary italic font-bold text-5xl text-center pt-14 text-white">
         Contactez-moi
       </h1>
-      <div className="p-8 rounded-lg shadow-md max-w-3xl mx-auto mt-10">
+      <div className="p-8 rounded-lg shadow-md max-w-md md:max-w-3xl mx-auto mt-10">
         <form name="contact" method="POST" netlify>
           <div className="mb-7">
             <input
@@ -62,7 +62,7 @@ function ContactForm() {
           </div>
         </form>
       </div>
-    </>
+    </section>
   );
 }
 

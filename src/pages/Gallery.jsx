@@ -32,7 +32,7 @@ const Gallery = () => {
       : gallery.filter((item) => item.tags.includes(activeFilter));
 
   return (
-    <section className="pb-9">
+    <section className="pb-9 mt-20">
       <h1 className="font-secondary italic font-bold text-5xl text-center pt-14 text-white">
         Découvrez ma collection
       </h1>

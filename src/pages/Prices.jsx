@@ -13,7 +13,7 @@ const Prices = () => {
   }, []);
 
   return (
-    <div className="pb-9">
+    <div className="pb-9 mt-20">
       <h1 className="font-secondary italic font-bold text-5xl text-center pt-14 text-white">
         Les tarifs
       </h1>
