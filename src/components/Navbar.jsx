@@ -28,7 +28,7 @@ const Nav = () => {
   let [open, setOpen] = useState(false);
   return (
     <div className="shadow-md fixed w-full z-[9] top-0 left-0">
-      <div className="md:flex items-center justify-between bg-black px-7">
+      <div className=" items-center justify-between bg-black px-7 md:flex">
         <div
           className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
       text-gray-800"
@@ -54,13 +54,14 @@ const Nav = () => {
         </div>
 
         <ul
-          className={`md:flex md:items-center md:pb-0 absolute md:static bg-black left-0 w-full
-           md:w-auto md:pl-0 flex flex-col md:flex-row justify-center h-[100vh] md:h-auto -z-10 md:z-0 transition-all duration-300 ease-in-out ${
+          className={`flex flex-col justify-center h-[100vh] absolute bg-black left-0 w-full
+          -z-10 transition-all duration-300 ease-in-out md:z-0 md:flex-row md:items-center md:pb-0
+           md:static md:w-auto md:pl-0 md:h-auto ${
              open ? "top-0" : "top-[-655px]"
            }`}
         >
           {navigation.map((link) => (
-            <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
+            <li key={link.name} className="text-xl my-7 md:ml-8 md:my-0 ">
               <Link
                 to={link.to}
                 onClick={() => setOpen(false)}
@@ -70,7 +71,7 @@ const Nav = () => {
                       ? "bg-white text-black"
                       : "text-white hover:bg-gray-700 hover:text-white"
                   }
-                  block w-3/4 m-auto md:w-full text-center rounded-md p-4 md:px-3 md:py-2 text-base font-medium
+                  block w-3/4 m-auto text-base text-center font-medium rounded-md p-4 md:w-full md:px-3 md:py-2 
                 `}
               >
                 {link.name}

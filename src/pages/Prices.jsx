@@ -19,9 +19,8 @@ const Prices = () => {
       </h1>
       <div className="flex flex-wrap justify-center items-center gap-20 m-4 mt-20 text-black">
         {price.map((price, index) => (
-          <>
+          <div key={index}>
             <div
-              key={index}
               className={`flex flex-col gap-8 justify-center items-center h-72 w-72 sm:h-[22rem] sm:w-[22rem] p-5 sm:text-xl text-center text-white bg-white rounded-full bg-cover bg-center`}
               style={{
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${urlFor(
@@ -35,7 +34,7 @@ const Prices = () => {
               </p>
               <h2 className="font-primary font-bold">{price.prix}</h2>
             </div>
-          </>
+          </div>
         ))}
       </div>
     </div>
