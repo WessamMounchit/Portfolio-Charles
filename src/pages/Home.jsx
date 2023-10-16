@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { urlFor, client } from "../client";
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <main className="flex flex-col md:flex-row justify-center items-center h-full">
       {home.map((home, index) => (
-        <section key={index}>
+        <Fragment key={index}>
           <div
             className="h-[55vh] w-full bg-no-repeat bg-contain bg-center flex justify-center items-center text-center flex-col gap-4"
             style={{
@@ -32,7 +32,7 @@ const Home = () => {
               {home.description}
             </p>
           </div>
-        </section>
+        </Fragment>
       ))}
     </main>
   );

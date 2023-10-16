@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
 
 const Nav = () => {
   const location = useLocation();
+  const { pathname } = useLocation();
+  let [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   const navigation = [
     { name: "Accueil", to: "/", current: location.pathname === "/" },
@@ -25,7 +31,6 @@ const Nav = () => {
     },
   ];
 
-  let [open, setOpen] = useState(false);
   return (
     <div className="shadow-md fixed w-full z-[9] top-0 left-0">
       <div className=" items-center justify-between bg-black px-7 md:flex">
