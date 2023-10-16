@@ -17,14 +17,14 @@ const Home = () => {
       {home.map((home, index) => (
         <Fragment key={index}>
           <div
-            className="h-[55vh] w-full bg-no-repeat bg-contain bg-center flex justify-center items-center text-center flex-col gap-4"
+            className="h-[50%] md:h-full w-full bg-no-repeat bg-contain bg-center flex justify-center items-center text-center flex-col gap-4"
             style={{
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${urlFor(
+              backgroundImage: `url(${urlFor(
                 home.imgUrl
               )})`,
             }}
           ></div>
-          <div className="flex flex-col gap-3 sm:gap-7 justify-center items-center text-center pb-8 sm:p-0 sm:mr-8 sm:mt-6">
+          <div className="h-1/4 md:h-auto flex flex-col gap-3 sm:gap-7 justify-center items-center text-center pb-8 sm:p-0 sm:mr-8 sm:mt-6">
             <h1 className="text-white font-medium italic font-primary text-xl xl:text-5xl">
               {home.title}
             </h1>
