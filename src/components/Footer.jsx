@@ -3,8 +3,8 @@ import { FaFacebookF } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 
 const Footer = () => {
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const { pathname } = useLocation();
+  const isHomePage = pathname === "/";
 
   return (
     <footer

@@ -4,7 +4,6 @@ import logo from "../assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
 
 const Nav = () => {
-  const location = useLocation();
   const { pathname } = useLocation();
   let [open, setOpen] = useState(false);
 
@@ -13,21 +12,21 @@ const Nav = () => {
   }, [pathname]);
 
   const navigation = [
-    { name: "Accueil", to: "/", current: location.pathname === "/" },
+    { name: "Accueil", to: "/", current: pathname === "/" },
     {
       name: "Gallerie",
       to: "/gallerie",
-      current: location.pathname === "/gallerie",
+      current: pathname === "/gallerie",
     },
     {
       name: "Tarifs",
       to: "/tarifs",
-      current: location.pathname === "/tarifs",
+      current: pathname === "/tarifs",
     },
     {
       name: "Contact",
       to: "/contact",
-      current: location.pathname === "/contact",
+      current: pathname === "/contact",
     },
   ];
 
