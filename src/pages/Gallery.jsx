@@ -1,9 +1,17 @@
 import { useState, useEffect } from "react";
 import { urlFor, client } from "../client";
+import fetchData from "../utils/fetchData";
+import errorImg from "../assets/errorImg.svg";
 
 const Gallery = () => {
+  //////////  STATE   //////////
   const [activeFilter, setActiveFilter] = useState("Tout");
-  const [gallery, setGallery] = useState([]);
+  const [gallery, setGallery] = useState({
+    loading: false,
+    error: false,
+    data: undefined,
+  });
+
   const filters = [
     "Mariage",
     "Grossesse",
@@ -14,22 +22,67 @@ const Gallery = () => {
     "Tout",
   ];
 
+  const query = '*[_type == "gallery"]';
+
+  //////////  API   //////////
+  useEffect(() => {
+    fetchData(setGallery, () => client.fetch(query));
+  }, []);
+
+  //////////  FILTERS   //////////
   const handleFilter = (filter) => {
     setActiveFilter(filter);
   };
 
-  useEffect(() => {
-    const query = '*[_type == "gallery"]';
-
-    client.fetch(query).then((data) => {
-      setGallery(data);
-    });
-  }, []);
-
   const filteredGallery =
     activeFilter === "Tout"
-      ? gallery
-      : gallery.filter((item) => item.tags.includes(activeFilter));
+      ? gallery.data
+      : gallery.data.filter((item) => item.tags.includes(activeFilter));
+
+  let content;
+  //////////  LOADING   //////////
+  if (gallery.loading) {
+    content = (
+      <div
+        className="flex justify-center items-center"
+        style={{
+          backgroundImage: `url(${errorImg})`,
+        }}
+      ></div>
+    );
+  }
+  //////////  ERROR   //////////
+  else if (gallery.error) {
+    content = (
+      <div className="flex justify-center items-center">
+        <img src={errorImg} alt="chargement" />
+      </div>
+    );
+  }
+  //////////  NO CONTENT   //////////
+  else if (gallery.data?.length === 0) {
+    content = (
+      <p className="font-secondary text-white text-xl font-semibold">
+        Aucune photo disponible
+      </p>
+    );
+  }
+  //////////  CONTENT   //////////
+  else if (gallery.data?.length > 0) {
+    content = (
+      <div className="flex flex-wrap justify-center items-center gap-7 px-8 sm:px-0">
+        {filteredGallery?.map((item, index) => (
+          <div key={index}>
+            <img
+              className="rounded-lg object-cover sm:h-60 sm:w-96 "
+              src={urlFor(item.imgUrl)}
+              alt={item.name}
+            />
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <section className="pb-9 mt-20">
@@ -37,6 +90,7 @@ const Gallery = () => {
         Découvrez ma collection
       </h1>
 
+      {/* FILTERS */}
       <div className="font-primary text-2xl flex flex-wrap justify-center gap-2 mb-20 mx-6 mt-9 text-white sm:mt-16 sm:gap-8 ">
         {filters.map((filter, index) => (
           <button
@@ -51,19 +105,10 @@ const Gallery = () => {
             {filter}
           </button>
         ))}
-      </div>
 
-      <div className="flex flex-wrap justify-center items-center gap-7 px-8 sm:px-0">
-        {filteredGallery.map((item, index) => (
-          <div key={index}>
-            <img
-              className="rounded-lg object-cover sm:h-60 sm:w-96 "
-              src={urlFor(item.imgUrl)}
-              alt={item.name}
-            />
-          </div>
-        ))}
+        {/* CONTENT */}
       </div>
+      {content}
     </section>
   );
 };

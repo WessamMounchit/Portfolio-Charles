@@ -1,6 +1,5 @@
-
+//////////  HANDLE BY NETLIFY FORMS   //////////
 function ContactForm() {
-
   return (
     <section className="h-full pt-20">
       <h1 className="font-secondary italic font-bold text-5xl text-center pt-14 text-white">

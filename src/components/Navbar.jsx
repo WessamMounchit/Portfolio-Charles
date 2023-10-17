@@ -31,7 +31,7 @@ const Nav = () => {
   ];
 
   return (
-    <div className="shadow-md fixed w-full z-[9] top-0 left-0">
+    <nav className="shadow-md fixed w-full z-[9] top-0 left-0">
       <div className=" items-center justify-between bg-black px-7 md:flex">
         <div
           className="font-bold text-2xl flex items-center
@@ -64,10 +64,10 @@ const Nav = () => {
         </div>
 
         <ul
-          className={`flex flex-col justify-center h-[100vh] absolute bg-black left-0 w-full
+          className={`flex flex-col justify-center h-[110vh] absolute bg-black bg-opacity-80 left-0 w-full
           -z-10 transition-all duration-300 ease-linear md:z-0 md:flex-row md:items-center md:pb-0
            md:static md:w-auto md:pl-0 md:h-auto ${
-             open ? "-top-10" : "top-[-690px]"
+             open ? "-top-10" : "top-[-740px]"
            }`}
         >
           {navigation.map((link) => (
@@ -90,7 +90,7 @@ const Nav = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 
