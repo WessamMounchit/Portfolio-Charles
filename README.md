@@ -1,6 +1,7 @@
 # Evaluation d'entraînement front end en cours de formation : Portfolio de Charles Cantin.
 
 lien vers le site déployé en ligne : https://portfolio-cantin-charles.netlify.app/
+
 lien vers le studio Sanity déployé en ligne : https://charles-cantin-portfolio.sanity.studio/
 
 NB : Les identifiants de connexion au studio Sanity se trouvent dans la copie à rendre de cette évaluation. Ces identifiants sont destinés aux examinateurs.
@@ -31,7 +32,7 @@ Démarrer
 
 ## Déployer le Studio Sanity en local
 
-Accéder au fichier
+Accéder au dossier sanity
 
 ```bash
     cd sanity
@@ -49,7 +50,7 @@ Démarrer
     npm run dev
 ```
 
-puis s'authentifier (avec les identifiants fournis dans la copie à rendre) si nécessaire
+puis s'authentifier (avec les identifiants fournis dans la copie à rendre)
 
 ## Auteur
 
