@@ -6,7 +6,7 @@ lien vers le studio Sanity déployé en ligne : https://charles-cantin-portfolio
 
 NB : Les identifiants de connexion au studio Sanity se trouvent dans la copie à rendre de cette évaluation. Ces identifiants sont destinés aux examinateurs.
 
-Ce projet a été réalisé dans le cadre de l'évaluation d'entraînement en cours de formation : développer une application front-end. C'est un portfolio pour Charles Cantin, qui est passionné de photographie. Ce site répond aux fonctionnalités qui ont été demandées lors de cette évaluation. Les wireframes/maquettes et la charte graphique se trouvent dans ce repo au format PDF.
+Ce projet a été réalisé dans le cadre de l'évaluation d'entraînement en cours de formation : développer une application front-end. C'est un portfolio pour Charles Cantin, qui est passionné de photographie. Ce site répond aux fonctionnalités qui ont été demandées lors de cette évaluation. Les wireframes/maquettes et la charte graphique se trouvent dans le dossier livrables.
 
 si vous voulez tester l'application en local, suivez les étapes suivantes :
 
