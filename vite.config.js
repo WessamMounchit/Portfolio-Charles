@@ -13,19 +13,16 @@ export default defineConfig({
         description: "Découvrez l'univers d'un passioné de la photographie",
         icons: [
           {
-            src: "camera.svg",
-            sizes: "64x64 32x32 24x24 16x16",
-            type: "image/svg+xml",
+            src: "logo192.png",
+            type: "image/png",
+            sizes: "192x192",
+            purpose: "any"
           },
           {
-            src: "camera.svg",
-            type: "image/svg+xml",
-            sizes: "128x128",
-          },
-          {
-            src: "camera.svg",
-            type: "image/svg+xml",
+            src: "logo512.png",
+            type: "image/png",
             sizes: "512x512",
+            purpose: "maskable"
           },
         ],
         start_url: ".",
