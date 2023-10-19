@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import logo from "../assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
 
 const Nav = () => {
@@ -30,8 +29,10 @@ const Nav = () => {
     },
   ];
 
+  const isHome = pathname === "/"
+
   return (
-    <nav className="fixed w-full z-[9] top-0 left-0">
+    <nav className={`fixed w-full z-[9] top-0 left-0 ${!isHome && "bg-black"}`}>
       <div className=" items-center justify-between px-7 md:flex">
         <div
           className="font-bold text-2xl flex items-center
@@ -40,7 +41,7 @@ const Nav = () => {
           <Link onClick={() => setOpen(false)} to="/">
             <img
               className="h-16 py-1 mt-1 w-auto cursor-pointer"
-              src={logo}
+              src="logo_charles.png"
               alt="Charles Cantin"
             />
           </Link>
