@@ -68,7 +68,7 @@ const Nav = () => {
           className={`flex flex-col justify-center h-[110vh] absolute left-0 w-full
           -z-10 transition-all duration-300 ease-linear md:z-0 md:flex-row md:items-center md:pb-0
            md:static md:w-auto md:pl-0 md:h-auto ${
-             open ? "-top-10 bg-black opacity-80" : "top-[-740px]"
+             open ? "-top-10 bg-black bg-opacity-80" : "top-[-740px]"
            }`}
         >
           {navigation.map((link) => (
