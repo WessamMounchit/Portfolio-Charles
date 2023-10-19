@@ -6,7 +6,19 @@ lien vers le studio Sanity déployé en ligne : https://charles-cantin-portfolio
 
 NB : Les identifiants de connexion au studio Sanity se trouvent dans la copie à rendre de cette évaluation. Ces identifiants sont destinés aux examinateurs.
 
-Ce projet a été réalisé dans le cadre de l'évaluation d'entraînement en cours de formation : développer une application front-end. C'est un portfolio pour Charles Cantin, qui est passionné de photographie. Ce site répond aux fonctionnalités qui ont été demandées lors de cette évaluation. Les wireframes/maquettes et la charte graphique se trouvent dans le dossier livrables.
+Le projet consiste à développer un site web pour Charles Cantin, un passionné de photographie qui souhaite créer un portfolio en ligne pour mettre en avant son talent. En tant que développeur en formation, j'ai été sollicité pour réaliser la partie front-end de ce site. Le site comportera quatre pages principales :
+
+1. Page d'accueil : Une image en plein écran avec le texte "Charles Cantin - Photographe" centré verticalement et horizontalement.
+
+2. Page galerie : Cette section présentera les photographies de Charles classées par catégorie. Un système de filtres dynamique permettra de sélectionner une catégorie sans recharger la page.
+
+3. Page "tarifs et prestations" : Cette page affichera les différents services photographiques proposés par Charles, avec un titre, une description et un tarif pour chaque prestation.
+
+4. Page "contact" : Un formulaire fonctionnel sera mis en place pour que les visiteurs puissent contacter Charles.
+
+Chaque page inclura une barre de navigation avec un menu et des icônes pour les liens vers les profils Facebook et Instagram de Charles. Le site sera conçu de manière à ce que Charles puisse facilement mettre à jour son contenu via un CMS. Pour visualiser le site avant de le personnaliser, des images libres de droits seront récupérées sur Pixabay. L'objectif final est de permettre à Charles de promouvoir son travail et de potentiellement vivre de sa passion pour la photographie.
+
+Les wireframes/maquettes et la charte graphique se trouvent dans le dossier livrables.
 
 si vous voulez tester l'application en local, suivez les étapes suivantes :
 
